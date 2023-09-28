@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/ css?family=Poppins: 200, 300, 400, 500, 600, 700, 800, 900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+#preloader {
+    height: 100vh;
+    display: block;
+    backdrop-filter: blur(5px);
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    padding: 22%;
+}
+#preloader h2 {
+    color: #111;
+    font: 1em;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+  
+  /*
+   * Loading Dots
+   * Can we use pseudo elements here instead :after?
+   */
+  #preloader span {
+    display: inline-block;
+    vertical-align: middle;
+    width: .6em;
+    height: .6em;
+    margin: .19em;
+    background: #007DB6;
+    border-radius: .6em;
+    animation: loading 1s infinite alternate;
+  }
+  
+  /*
+   * Dots Colors
+   * Smarter targeting vs nth-of-type?
+   */
+  #preloader span:nth-of-type(2) {
+    background: #008FB2;
+    animation-delay: 0.2s;
+  }
+  #preloader span:nth-of-type(3) {
+    background: #009B9E;
+    animation-delay: 0.4s;
+  }
+  #preloader span:nth-of-type(4) {
+    background: #00A77D;
+    animation-delay: 0.6s;
+  }
+  #preloader span:nth-of-type(5) {
+    background: #00B247;
+    animation-delay: 0.8s;
+  }
+  #preloader span:nth-of-type(6) {
+    background: #5AB027;
+    animation-delay: 1.0s;
+  }
+  #preloader span:nth-of-type(7) {
+    background: #A0B61E;
+    animation-delay: 1.2s;
+  }
+  
+  /*
+   * Animation keyframes
+   * Use transition opacity instead of keyframes?
+   */
+  @keyframes loading {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+header {
+    top: 0;
+    left: 0;
+    padding: 30px 60px;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    justify-content: space-between;
+    transition: 1s;
+}
+.account p{
+    text-transform: capitalize;
+}
+.account p a{
+    color: #fff;
+    text-decoration: none;
+}
+header .logo {
+    font-size: 1em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+header.sticky .logo h1 {
+    color: #111;
+}
+
+header .logo h1 {
+    color: #fff;
+}
+
+header .logo h1 span {
+    color: red;
+}
+
+.signup{
+    background-image: url(img/login_bg.jpeg);
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.signup .user_account{
+    padding: 40px 50px 30px 50px;
+    background-color: rgb(235, 232, 232);
+    border-radius: 20px;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+}
+.signup .user_account .user{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.signup .user_account .user img{
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.signup .user_account .form_signup{
+    padding: 5px 5px 5px 5px;
+    margin: 5px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.signup .user_account .form_signup .input{
+    display: flex;
+    margin-bottom: 10px;
+}
+.signup .user_account .form_signup .input input{
+    width: 100%;
+    height: 32px;
+    padding: 10px;
+}
+.signup .user_account .form_signup .input img{
+    margin-right: 4px;
+}
+.signup .user_account .form_signup .submit{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.signup .user_account .form_signup .submit input{
+    display: flex;
+    margin-top: 15px;
+    padding: 5px 15px;
+    background-color: #6b93cfce; 
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #111;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 5px;
+}
+.account{
+    display: block;
+    position: relative;
+    margin-top: 30px;
+}
+
+
+@media (max-width : 999px){
+    #preloader {
+        padding: 100% 14% 14% 14%;
+    }
+    header .logo {
+        font-size: 1em;
+        font-weight: 300;
+        text-decoration: none;
+    }
+    .signup .user_account {
+        padding: 25px;
+        width: 330px;
+    }
+    .signup .user_account .form_signup .input img {
+        margin-right: 2px;
+    }
+    .signup .user_account .form_signup .submit input{
+        margin-top: 10px ;
+    }
+    .signup .user_account .form_signup .input input{
+        padding: 5px;
+        margin: 1px;
+    }
+    .account{
+        margin-top: 20px;
+    }
+}
